@@ -3,10 +3,11 @@ for i=1,10 do
     print("test")
     if v:IsA("Frame") then
       print(v.Name)
-      if v.Name=="PetTemplate" then break end
-      local petpart = v
-      print(petpart.Name)
-      game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("UnequipPet", petpart.Name)
+      if v.Name~="PetTemplate" then
+        local petpart = v
+        print(petpart.Name)
+        game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("UnequipPet", petpart.Name)
+      end
     end
   end
   task.wait(0.01)
