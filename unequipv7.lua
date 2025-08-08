@@ -1,6 +1,7 @@
 for i=1,10 do
   for b,v in game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Main.ScrollingFrame:GetChildren() do
     if v:IsA("Frame") then
+      print(v.Name)
       if v.Name=="PetTemplate" then break end
       local petpart = v
       print(petpart.Name)
