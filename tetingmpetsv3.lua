@@ -1,4 +1,5 @@
-for i=1,10 do
+local counter = 0
+repeat
   for b,v in game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Main.ScrollingFrame:GetChildren() do
     print("test")
     if v:IsA("Frame") then
@@ -8,9 +9,10 @@ for i=1,10 do
         print(petpart.Name)
         game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("UnequipPet", petpart.Name)
         task.wait(0.1)
+        counter+=counter
         game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("EquipPet", petpart.Name, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
       end
     end
   end
   task.wait(0.01)
-end
+until counter >= 545
