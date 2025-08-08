@@ -3,7 +3,7 @@ for i=1,10 do
     if v:FindFirstChildWhichIsA("Part") then
       local petpart = v:FindFirstChildWhichIsA("Part")
       game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("UnequipPet", petpart.Name)
-      task.wait(0.02)
+      task.wait(1)
       game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("EquipPet", petpart.Name, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
     end
   end
