@@ -1,4 +1,5 @@
 local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+print("initialising")
 
 while true do
   for b,v in game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Main.PetDisplay.ScrollingFrame:GetChildren() do
