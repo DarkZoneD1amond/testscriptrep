@@ -7,7 +7,7 @@ while true do
     if v:IsA("Frame") then
       if v.Name~="PetTemplate" then
         print("work?")
-        if v.Main.PET_TYPE.Text ~= "Blood Hedgehog" then return end
+        if v.Main.PET_TYPE.Text ~= "Blood Hedgehog" then break end
         print("type:bloodhedge")
         local petpart = v
         game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("UnequipPet", petpart.Name)
