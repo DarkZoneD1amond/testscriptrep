@@ -7,8 +7,10 @@ while true do
         if v.Main.PET_TYPE.Text ~= "Blood Hedgehog" then return end
         local petpart = v
         game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("UnequipPet", petpart.Name)
+        print("unequipping")
         task.wait(0.5)
         game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("PetsService"):FireServer("EquipPet", petpart.Name, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+        print("equipping")
       end
     end
   end
