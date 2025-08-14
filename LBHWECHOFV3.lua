@@ -11,10 +11,12 @@ while true do
   for b,v in game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Main.PetDisplay.ScrollingFrame:GetChildren() do
     if v:IsA("Frame") then
       if v.Name~="PetTemplate" then
-        if string.find(v:WaitForChild("Main").PET_TYPE.Text, "Echo Frog") then
-          repeat
-            task.wait()
-          until string.find(v:WaitForChild("Main").Cooldowns.COOLDOWN_1.COOLDOWN_NAME.Text, "6")
+        if v:FindFirstChild("Main") then
+            if string.find(v:WaitForChild("Main").PET_TYPE.Text, "Echo Frog") then
+              repeat
+                task.wait()
+              until string.find(v:WaitForChild("Main").Cooldowns.COOLDOWN_1.COOLDOWN_NAME.Text, "6")
+            end
         end
       end
     end
