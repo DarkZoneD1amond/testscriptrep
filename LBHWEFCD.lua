@@ -2,12 +2,19 @@ local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 print("initialising")
 
 while true do
-  firesignal(game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener.SENSOR.MouseButton1Click)
   for b,v in game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Main.PetDisplay.ScrollingFrame:GetChildren() do
     if v:IsA("Frame") then
       if v.Name~="PetTemplate" then
         if string.find(v.Main.PET_TYPE.Text, "Echo Frog") then
-          repeat task.wait() until string.find(v.Main.Cooldowns.COOLDOWN_1.COOLDOWN_NAME.text, "8")
+          if game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener then
+            firesignal(game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener.SENSOR.MouseButton1Click)
+          end
+          repeat
+            task.wait()
+            if game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener then
+              firesignal(game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener.SENSOR.MouseButton1Click)
+            end
+          until string.find(v.Main.Cooldowns.COOLDOWN_1.COOLDOWN_NAME.text, "8")
         end
       end
     end
