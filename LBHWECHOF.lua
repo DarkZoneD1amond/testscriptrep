@@ -3,7 +3,7 @@ print("initialising")
 task.spawn(function()
     while true do
       firesignal(game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame:WaitForChild("Opener").SENSOR.MouseButton1Click)
-      repeat task.wait until not game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame:FindFirstChild("Opener")
+      repeat task.wait() until not game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame:FindFirstChild("Opener")
     end
 end)
 
