@@ -2,7 +2,7 @@ local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 print("initialising")
 
 while true do
-  firesignal(game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener.Sensor)
+  firesignal(game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Opener.SENSOR)
   for b,v in game.Players.LocalPlayer.PlayerGui.ActivePetUI.Frame.Main.PetDisplay.ScrollingFrame:GetChildren() do
     if v:IsA("Frame") then
       if v.Name~="PetTemplate" then
