@@ -14,7 +14,7 @@ while true do
         if string.find(v:WaitForChild("Main").PET_TYPE.Text, "Echo Frog") then
           repeat
             task.wait()
-          until string.find(v:WaitForChild("Main").Cooldowns.COOLDOWN_1.COOLDOWN_NAME.text, "6")
+          until string.find(v:WaitForChild("Main").Cooldowns.COOLDOWN_1.COOLDOWN_NAME.Text, "6")
         end
       end
     end
